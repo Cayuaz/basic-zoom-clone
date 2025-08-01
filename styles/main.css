@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: 62,5%;
+    font-size: 62.5%;
 }
 
 @font-face {
@@ -23,4 +23,136 @@ body {
 button {
     all: unset;
     cursor: pointer;
+}
+
+.limit-section {
+    max-width: 768px;
+    width: 100%;
+}
+
+/* ===== Layout: Header ===== */
+
+#header img {
+    width: 100%;
+}
+
+/*Header em coluna para melhor adaptação em telas menores e organização*/
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: clamp(1.5rem, (0.5vw + 1.5rem), 2.5rem);
+    padding-inline: clamp(0.5rem, (0.5vw + 0.5rem), 1.5rem);
+    gap: clamp(0.5rem, (0.5vw + 0.5rem), 1.5rem);
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+/*Navegação em coluna para também melhor adaptação em telas menores*/
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: clamp(1rem, (0.5vw + 1.5rem), 2.5rem);
+    font-size: clamp(1.5rem, (0.5vw + 1rem), 1.8rem);
+}
+
+.nav-list {
+    gap: clamp(1rem, (0.5vw + 1.5rem), 2.5rem);
+    list-style: none;
+    display: flex;
+    margin-inline: auto;
+} 
+
+.nav-list a:link, .nav-list a:visited  {
+    color: #000;
+    text-decoration: none;  
+}
+
+/*Pequeno efeito de crescimento e mudança de cor quando o mouse passar em cima dos links*/
+.nav-list a:hover {
+    display: block;
+    color: #105cfc;
+    transform: scale(1.1);
+    will-change: transform;
+}
+
+/*Botões escondidos em telas pequenas*/
+.button-container {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    /*Em telas médias o limite de largura aumenta até a largura que começa a outra media query*/
+    .limit-section {
+        max-width: 1028px;
+        width: 100%;
+    }
+
+    /*Exibe os botões apenas em telas maiores*/
+    .button-container {
+        display: block;
+    }
+
+    .btn-login, .btn-subscribe {
+        font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
+        padding-inline: clamp(1em, (0.5vw + 1em), 2em);
+        padding-block: clamp(0.5em, 0.7em, 1em);
+        font-weight: bolder;
+        border-radius: 15px;
+        margin-inline: 10px;
+    }
+
+    .btn-login {
+        color: #105cfc;
+        border: 1px solid #105cfc;
+    }
+
+    .btn-subscribe {
+        background-color: #105cfc;
+        color: #fff;
+    }
+
+
+    .btn-login:hover {
+        background-color: #105bfc27;
+    }
+
+    .btn-subscribe:hover {
+        background-color: #104bca;
+    }
+
+    /*Mudança da barra de navegação para ficar em linha*/
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;  
+    }
+
+}
+
+@media screen and (min-width: 1028px) {
+
+    /*Novo limite de largura definido*/
+    .limit-section {
+        max-width: 1400px;
+        width: 100%;
+    }
+
+    /*Flex grow para os links crescerem e ocuparem o espaço necessário entre eles e os botões*/
+    /*Poderia ser utilizado justify-content também*/
+    .nav-list {
+        flex-grow: 1;
+    }
+    
+    /*Mudança do flex-direction para que todos os containers fiquem lado a lado também*/
+    #header {
+        display: flex;
+        flex-direction: row;
+    }
+
 }
