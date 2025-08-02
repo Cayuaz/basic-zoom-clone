@@ -23,7 +23,7 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 'header' 'main' 'footer';
     justify-content: center;
-    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
+    gap: clamp(2rem, (0.5vw + 2rem), 3rem);
 }
 
 button {
@@ -100,7 +100,7 @@ button {
     margin-inline: 10px;
 }
 
-.btn-login {
+.btn-login, .btn-explorer {
     color: #105cfc;
     border: 1px solid #105cfc;
 }
@@ -111,11 +111,11 @@ button {
 }
 
 
-.btn-login:hover {
+.btn-login:hover, .btn-explorer:hover {
     background-color: #105bfc27;
 }
 
-.btn-subscribe:hover {
+.btn-subscribe:hover, .btn-meet:hover {
     background-color: #104bca;
 }
 
@@ -126,14 +126,14 @@ main {
     padding-inline: clamp(1.5rem, (0.5vw + 1rem), 2.5rem);
 }
 
-.banner-section {
+.content-section {
     display: grid;
     justify-content: center;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 'text' 'img';
-    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'text' 'img' 'text2' 'cards';
+    gap: clamp(2rem, (0.5vw + 2rem), 3rem)
 }
 
 .text-container {
@@ -141,7 +141,16 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: clamp(2rem, (0.5vw + 2rem), 3rem)
+}
+
+.text-container2 {
+    grid-area: text2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .text-container p, .text-container2 p {
@@ -156,7 +165,7 @@ h1 {
    color: #104bca; 
 }
 
-.btn-meet {
+.btn-meet, .btn-explorer {
     font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
     margin-block: clamp(1.5rem, (0.5vw + 1rem), 1.8rem);
     padding-inline: clamp(1em, (0.5vw + 1em), 2em);
@@ -179,34 +188,16 @@ h1 {
     height: 20px;
 }
 
-.cards-section {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: 'text2' 'cards';
-    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
-}
-
-.text-container2 {
-    grid-area: text2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-
 .cards-container {
     grid-area: cards;
 }
 
-h2 {
-    font-size: clamp(2rem, (2vw + 1rem), 4rem);
+.text-container2 {
+    grid-area: text2;
 }
 
-section {
-    margin-block-end: clamp(2.5rem, (0.5vw + 3.5rem), 4rem);
+h2 {
+    font-size: clamp(2rem, (2vw + 1rem), 4rem);
 }
 
 /* ===== Layout: Footer ===== */
