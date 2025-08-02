@@ -23,7 +23,7 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 'header' 'main' 'footer';
     justify-content: center;
-    gap: clamp(2rem, (0.5vw + 2rem), 3rem);
+    gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
 }
 
 button {
@@ -34,6 +34,7 @@ button {
 .limit-section {
     max-width: 768px;
     width: 100%;
+    padding-inline: clamp(1rem, 2vw, 2rem);
 }
 
 /* ===== Layout: Header ===== */
@@ -123,17 +124,17 @@ button {
 
 main {
     grid-area: main;
-    padding-inline: clamp(1.5rem, (0.5vw + 1rem), 2.5rem);
 }
 
 .content-section {
     display: grid;
+    align-content: center;
     justify-content: center;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 20% 1fr;
     grid-template-areas: 'text' 'img' 'text2' 'cards';
-    gap: clamp(2rem, (0.5vw + 2rem), 3rem)
+    gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
 }
 
 .text-container {
@@ -142,7 +143,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    gap: clamp(2rem, (0.5vw + 2rem), 3rem)
 }
 
 .text-container2 {
@@ -150,7 +150,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .text-container p, .text-container2 p {
@@ -184,12 +184,27 @@ h1 {
 }
 
 .cards-container img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .cards-container {
     grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
+}
+
+.cards-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #104bca3d;
+    border-radius: 15px;
+    padding-inline: clamp(3rem, (0.5vw + 4rem), 6rem);
+    padding-block: clamp(4rem, (0.5vw + 5rem), 6rem);
 }
 
 .text-container2 {
@@ -197,13 +212,14 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(2rem, (2vw + 1rem), 4rem);
+    font-size: clamp(2.5rem, (2vw + 1.5rem), 4rem);
 }
 
 /* ===== Layout: Footer ===== */
 
 footer {
     grid-area: footer;
+    padding: 50px;
 }
 
 /* ===== Layout: Medias queries ===== */
