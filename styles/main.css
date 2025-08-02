@@ -23,6 +23,7 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 'header' 'main' 'footer';
     justify-content: center;
+    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
 }
 
 button {
@@ -90,17 +91,131 @@ button {
     display: none;
 }
 
+.btn-login, .btn-subscribe {
+    font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
+    padding-inline: clamp(1em, (0.5vw + 1em), 2em);
+    padding-block: clamp(0.5em, 0.7em, 1em);
+    font-weight: bolder;
+    border-radius: 15px;
+    margin-inline: 10px;
+}
+
+.btn-login {
+    color: #105cfc;
+    border: 1px solid #105cfc;
+}
+
+.btn-subscribe, .btn-meet {
+    background-color: #105cfc;
+    color: #fff;
+}
+
+
+.btn-login:hover {
+    background-color: #105bfc27;
+}
+
+.btn-subscribe:hover {
+    background-color: #104bca;
+}
+
+/* ===== Layout: Main ===== */
+
 main {
     grid-area: main;
+    padding-inline: clamp(1.5rem, (0.5vw + 1rem), 2.5rem);
 }
-.container-card img {
+
+.banner-section {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 'text' 'img';
+    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
+}
+
+.text-container {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-container p, .text-container2 p {
+    font-size: clamp(1.4rem, (0.5vw + 1.2rem), 1.8rem);
+}
+
+h1 {
+    font-size: clamp(3rem, (2vw + 1.5rem), 4.5rem);
+}
+
+.blue {
+   color: #104bca; 
+}
+
+.btn-meet {
+    font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
+    margin-block: clamp(1.5rem, (0.5vw + 1rem), 1.8rem);
+    padding-inline: clamp(1em, (0.5vw + 1em), 2em);
+    padding-block: clamp(0.5em, 0.7em, 1em);
+    font-weight: bolder;
+    border-radius: 15px;
+}
+
+.img-container {
+    grid-area: img;
+}
+
+.img-container img {
+    width: 100%;
+    border: #000 1px solid;
+}
+
+.cards-container img {
     width: 20px;
     height: 20px;
 }
 
+.cards-section {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 'text2' 'cards';
+    gap: clamp(2.5rem, (0.5vw + 3.5rem), 4rem)
+}
+
+.text-container2 {
+    grid-area: text2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.cards-container {
+    grid-area: cards;
+}
+
+h2 {
+    font-size: clamp(2rem, (2vw + 1rem), 4rem);
+}
+
+section {
+    margin-block-end: clamp(2.5rem, (0.5vw + 3.5rem), 4rem);
+}
+
+/* ===== Layout: Footer ===== */
+
 footer {
     grid-area: footer;
 }
+
+/* ===== Layout: Medias queries ===== */
 
 @media screen and (min-width: 768px) {
 
@@ -115,34 +230,6 @@ footer {
         display: block;
     }
 
-    .btn-login, .btn-subscribe {
-        font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
-        padding-inline: clamp(1em, (0.5vw + 1em), 2em);
-        padding-block: clamp(0.5em, 0.7em, 1em);
-        font-weight: bolder;
-        border-radius: 15px;
-        margin-inline: 10px;
-    }
-
-    .btn-login {
-        color: #105cfc;
-        border: 1px solid #105cfc;
-    }
-
-    .btn-subscribe {
-        background-color: #105cfc;
-        color: #fff;
-    }
-
-
-    .btn-login:hover {
-        background-color: #105bfc27;
-    }
-
-    .btn-subscribe:hover {
-        background-color: #104bca;
-    }
-
     /*Mudança da barra de navegação para ficar em linha*/
     .nav-container {
         display: flex;
@@ -152,7 +239,6 @@ footer {
     }
 
 }
-
 
 @media screen and (min-width: 1028px) {
 
