@@ -26,15 +26,15 @@ body {
     gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
 }
 
-button {
-    all: unset;
-    cursor: pointer;
+a {
+    text-decoration: none;
 }
 
 .limit-section {
     max-width: 768px;
     width: 100%;
-    padding-inline: clamp(1rem, 2vw, 2rem);
+    margin-inline: auto;
+    padding-inline: clamp(2rem, 2vw, 2rem);
 }
 
 /* ===== Layout: Header ===== */
@@ -64,7 +64,7 @@ button {
     justify-content: space-evenly;
     align-items: center;
     gap: clamp(1rem, (0.5vw + 1.5rem), 2.5rem);
-    font-size: clamp(1.5rem, (0.5vw + 1rem), 1.8rem);
+    font-size: clamp(1.7rem, (0.5vw + 1.2rem), 2rem);
 }
 
 .nav-list {
@@ -92,33 +92,40 @@ button {
     display: none;
 }
 
-.btn-login, .btn-subscribe {
-    font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
+.login-link, .subscribe-link {
+    font-size: clamp(1.4rem, (0.5vw + 1rem), 1.5rem);
     padding-inline: clamp(1em, (0.5vw + 1em), 2em);
     padding-block: clamp(0.5em, 0.7em, 1em);
     font-weight: bolder;
-    border-radius: 15px;
+    border-radius: 25px;
     margin-inline: 10px;
 }
 
-.btn-login, .btn-explorer {
+.login-link, .explorer-link, .plans-link2 {
+    display: inline-block;
     color: #105cfc;
     border: 1px solid #105cfc;
+    background-color: #fff;
 }
 
-.btn-subscribe, .btn-meet {
+.subscribe-link, .plans-link {
     background-color: #105cfc;
     color: #fff;
 }
 
 
-.btn-login:hover, .btn-explorer:hover {
+.login-link:hover, .explorer-link:hover {
     background-color: #105bfc27;
 }
 
-.btn-subscribe:hover, .btn-meet:hover {
+.subscribe-link:hover, .plans-link:hover {
     background-color: #104bca;
 }
+
+/*
+a:active {
+  box-shadow: 0 0 0 1px #104bca80; 
+}*/
 
 /* ===== Layout: Main ===== */
 
@@ -126,18 +133,18 @@ main {
     grid-area: main;
 }
 
-.content-section {
+.content-container {
     display: grid;
     align-content: center;
     justify-content: center;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 20% 1fr;
-    grid-template-areas: 'text' 'img' 'text2' 'cards';
-    gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'text' 'img' 'text2' 'cards' 'ready';
+    gap: 50px;
 }
 
-.text-container {
+.text-section {
     grid-area: text;
     display: flex;
     flex-direction: column;
@@ -145,74 +152,116 @@ main {
     justify-content: space-evenly;
 }
 
-.text-container2 {
+.text-section2 {
     grid-area: text2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.text-container p, .text-container2 p {
-    font-size: clamp(1.4rem, (0.5vw + 1.2rem), 1.8rem);
+
+.text-section p, .text-section2 p, .text-section a {
+    font-size: clamp(1.5rem, (0.5vw + 1.4rem), 2rem);
+}
+
+.text-section .blue {
+    display: block;
+    font-weight: bold;
 }
 
 h1 {
-    font-size: clamp(3rem, (2vw + 1.5rem), 4.5rem);
+    font-size: clamp(2.5rem, (2vw + 2.5rem), 4.5rem);
 }
 
 .blue {
    color: #104bca; 
 }
 
-.btn-meet, .btn-explorer {
+.plans-link, .explorer-link {
+    display: inline-block;
     font-size: clamp(1.2rem, (0.5vw + 1rem), 1.3rem);
     margin-block: clamp(1.5rem, (0.5vw + 1rem), 1.8rem);
     padding-inline: clamp(1em, (0.5vw + 1em), 2em);
     padding-block: clamp(0.5em, 0.7em, 1em);
     font-weight: bolder;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
-.img-container {
+.img-section {
     grid-area: img;
 }
 
-.img-container img {
+.img-section img {
     width: 100%;
-    border: #000 1px solid;
 }
 
-.cards-container img {
+.cards-section img {
     width: 30px;
     height: 30px;
 }
 
-.cards-container {
+.cards-section {
     grid-area: cards;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-content: center;
-    gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
+    gap: clamp(2rem, (0.5vw + 1.5rem), 3rem);
 }
 
-.cards-container a {
+.cards-section a {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     border: 2px solid #104bca3d;
-    border-radius: 15px;
-    padding-inline: clamp(3rem, (0.5vw + 4rem), 6rem);
-    padding-block: clamp(4rem, (0.5vw + 5rem), 6rem);
+    border-radius: 15px;    
+    padding-inline: clamp(3rem, (0.5vw + 3rem), 8rem);
+    padding-block: clamp(2.5rem, (0.5vw + 2.5rem), 6rem);
+    font-size: clamp(1.2rem, (0.5vw + 1.2rem), 2rem);
 }
 
-.text-container2 {
-    grid-area: text2;
+.cards-section a:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px 1px #104bca6e;
 }
 
 h2 {
     font-size: clamp(2.5rem, (2vw + 1.5rem), 4rem);
+}
+
+.ready-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(4rem, (0.5vw + 5rem), 6rem);
+    grid-area: ready;
+    text-align: center;
+    background-color: #104bca;
+    width: 100%;
+    padding-block: clamp(2.5rem, (0.5vw + 3.5rem), 4.5rem);
+}
+
+.ready-section h3 {
+    color: #fff;
+    font-size: clamp(2.5rem, (2vw + 1.5rem), 4rem);
+}
+
+.register-link, .plans-link2 {
+    font-size: clamp(1.4rem, (0.5vw + 1.2rem), 1.6rem);
+    margin-inline: 10px;
+    padding-inline: clamp(1.8em, (0.5vw + 1.5em), 2.5em);
+    padding-block: clamp(0.5em, 0.7em, 1em);
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+.register-link {
+    color: #000;
+    background-color: #00ede7;
 }
 
 /* ===== Layout: Footer ===== */
@@ -225,6 +274,28 @@ footer {
 /* ===== Layout: Medias queries ===== */
 
 @media screen and (min-width: 768px) {
+
+
+    .text-section {
+        justify-content: space-around;
+    }
+
+    .text-section2 {
+        justify-content: space-evenly;
+    }
+
+    .content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'text text' 'img img' 'cards text2'  'ready ready';
+        gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
+    }
+
+    .text-section .blue {
+        display: inline;
+        margin-inline-start: clamp(1.5rem, (0.5vw + 3rem), 3rem);
+    }
 
     /*Em telas médias o limite de largura aumenta até a largura que começa a outra media query*/
     .limit-section {
@@ -249,9 +320,17 @@ footer {
 
 @media screen and (min-width: 1028px) {
 
+    .content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'text img' 'text2 cards' 'ready ready';
+        gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
+    }
+
     /*Novo limite de largura definido*/
     .limit-section {
-        max-width: 1400px;
+        max-width: 1200px;
         width: 100%;
     }
 
