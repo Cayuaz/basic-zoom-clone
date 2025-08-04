@@ -167,7 +167,8 @@ main {
 }
 
 .container-text .blue {
-    display: block;
+    display: inline;
+    margin-inline-start: clamp(1.5rem, (0.5vw + 1.5rem), 2rem);
     font-weight: bold;
 }
 
@@ -366,10 +367,10 @@ option {
 /* ===== Layout: Classes JS ===== */
 
 .arrow {
-    display: inline-block;
-    font-size: 3rem;
+    display: inline;
+    font-size: 2.5rem;
     color: #105cfc;
-    margin-inline-start: 1rem;
+    margin-inline-start: 0.5rem;
     vertical-align: sub;
 }
 
@@ -396,11 +397,6 @@ option {
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 'text text' 'img img' 'cards text2'  'ready ready';
         gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
-    }
-
-    .container-text .blue {
-        display: inline;
-        margin-inline-start: clamp(1.5rem, (0.5vw + 3rem), 3rem);
     }
 
     .footer-list {
