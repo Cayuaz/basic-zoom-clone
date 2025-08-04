@@ -108,7 +108,7 @@ a {
 }
 
 .subscribe-link, .plans-link {
-    background-color: #105cfc;
+    background-color: #105bfc;
     color: #fff;
 }
 
@@ -212,7 +212,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-content: center;
-    gap: clamp(2rem, (0.5vw + 1.5rem), 3rem);
+    gap: clamp(3rem, (0.5vw + 3rem), 4rem);
 }
 
 .cards-section a {
@@ -223,15 +223,14 @@ h1 {
     text-align: center;
     align-items: center;
     border: 2px solid #104bca3d;
-    border-radius: 15px;    
+    border-radius: 15px; 
     padding-inline: clamp(3rem, (0.5vw + 3rem), 8rem);
-    padding-block: clamp(2.5rem, (0.5vw + 2.5rem), 6rem);
+    padding-block: clamp(3rem, (0.5vw + 2.5rem), 7rem);   
     font-size: clamp(1.2rem, (0.5vw + 1.2rem), 2rem);
 }
 
 .cards-section a:hover {
     transform: scale(1.1);
-    box-shadow: 1px 1px 10px 1px #104bca6e;
 }
 
 h2 {
@@ -257,7 +256,7 @@ h2 {
 }
 
 .register-link, .plans-link2 {
-    font-size: clamp(1.4rem, (0.5vw + 1.2rem), 1.6rem);
+    font-size: clamp(1.4rem, (0.5vw + 1.2rem), 1.8rem);
     padding-inline: clamp(1.8em, (0.5vw + 1.5em), 2.5em);
     padding-block: clamp(0.5em, 0.7em, 1em);
     font-weight: bolder;
@@ -364,6 +363,20 @@ option {
     text-align: center;
 }
 
+/* ===== Layout: Classes JS ===== */
+
+.arrow {
+    display: inline-block;
+    font-size: 3rem;
+    color: #105cfc;
+    margin-inline-start: 1rem;
+    vertical-align: sub;
+}
+
+.grow-effect {
+    box-shadow: 1px 1px 10px 1px #104bca6e;  
+}
+
 /* ===== Layout: Medias queries ===== */
 
 @media screen and (min-width: 768px) {
@@ -385,7 +398,7 @@ option {
         gap: clamp(1.5rem, (0.5vw + 1rem), 3rem);
     }
 
-    .text-section .blue {
+    .container-text .blue {
         display: inline;
         margin-inline-start: clamp(1.5rem, (0.5vw + 3rem), 3rem);
     }
