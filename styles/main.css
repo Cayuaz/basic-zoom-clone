@@ -180,7 +180,8 @@ main {
 }
 
 h1 {
-    font-size: clamp(2.5rem, (3vw + 1rem), 4.5rem);
+    font-size: clamp(2.5rem, (3vw + 1rem), 4rem);
+    text-align: center;
 }
 
 .blue {
@@ -194,7 +195,7 @@ h1 {
     padding-inline: clamp(1em, (0.5vw + 1em), 2em);
     padding-block: clamp(0.5em, 0.7em, 1em);
     font-weight: bolder;
-    border-radius: 25px;
+    border-radius: 25px;;
 }
 
 /* ===== Layout: Main - Seção da imagem ===== */
@@ -451,14 +452,6 @@ option {
         max-width: 1400px;
         width: 100%;
     }
-
-    /*Flex grow para os links crescerem e ocuparem o espaço necessário entre eles e os botões*/
-    /*Poderia ser utilizado justify-content também*/
-    /*
-    .nav-list {
-        flex-grow: 1;
-    }
-    */
     
     /*Mudança do flex-direction para que todos os containers fiquem lado a lado também*/
     #header div {
