@@ -1,3 +1,4 @@
+/* ===== Layout: Classes inicias/gerais ===== */
 *, *::after, *::before {
     margin: 0;
     padding: 0;
@@ -126,11 +127,6 @@ a {
 .subscribe-link:hover, .plans-link:hover {
     background-color: #104bca;
 }
-
-/*
-a:active {
-  box-shadow: 0 0 0 1px #104bca80; 
-}*/
 
 /* ===== Layout: Main ===== */
 
