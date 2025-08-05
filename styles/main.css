@@ -33,41 +33,47 @@ a {
     max-width: 768px;
     width: 100%;
     margin-inline: auto;
-    padding-inline: clamp(2rem, 2vw, 2rem);
+    padding-inline: clamp(2rem, 2vw, 2.5rem);
 }
 
 /* ===== Layout: Header ===== */
 
 #header img {
     width: 100%;
+    margin-inline-end: 1.5rem;
 }
 
 /*Header em coluna para melhor adaptação em telas menores e organização*/
 #header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     padding-block: clamp(1.5rem, (0.5vw + 1.5rem), 2.5rem);
     padding-inline: clamp(0.5rem, (0.5vw + 0.5rem), 1.5rem);
-    gap: clamp(0.5rem, (0.5vw + 0.5rem), 1.5rem);
-    text-align: center;
-    flex-wrap: wrap;
     grid-area: header;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
+}
+
+#header div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    gap: clamp(0.8rem, (0.5vw + 0.5rem), 1.2rem);
 }
 
 /*Navegação em coluna para também melhor adaptação em telas menores*/
 .nav-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: clamp(0.5rem, (0.5vw + 1rem), 1.5rem);
-    font-size: clamp(1.2rem, (0.5vw + 1.2rem), 2rem);
+    justify-content: space-between;
+    font-size: clamp(1.2rem, (2.5vw + 0.5rem), 2rem);
 }
 
 .nav-list {
-    gap: clamp(1rem, (0.5vw + 1.5rem), 2.5rem);
+    gap: clamp(1rem, (0.5vw + 1rem), 1.7rem);
     list-style: none;
     display: flex;
     margin-inline: auto;
@@ -87,17 +93,17 @@ a {
 }
 
 /*Botões escondidos em telas pequenas*/
-.button-container {
+.button-container a {
     display: none;
 }
 
 .login-link, .subscribe-link {
-    font-size: clamp(1.4rem, (0.5vw + 1rem), 1.5rem);
+    font-size: clamp(1.2rem, (0.5vw + 1rem), 1.6rem);
     padding-inline: clamp(1em, (0.5vw + 1em), 2em);
     padding-block: clamp(0.5em, 0.7em, 1em);
     font-weight: bolder;
     border-radius: 25px;
-    margin-inline: 10px;
+    margin-inline: 5px;
 }
 
 .login-link, .explorer-link, .plans-link2 {
@@ -415,16 +421,14 @@ option {
     }
 
     /*Exibe os botões apenas em telas maiores*/
-    .button-container {
+    .button-container a {
         display: block;
     }
 
     /*Mudança da barra de navegação para ficar em linha*/
     .nav-container {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;  
+        flex-direction: row;  
     }
 
 }
@@ -441,20 +445,23 @@ option {
 
     /*Novo limite de largura definido*/
     .limit-section {
-        max-width: 1200px;
+        max-width: 1400px;
         width: 100%;
     }
 
     /*Flex grow para os links crescerem e ocuparem o espaço necessário entre eles e os botões*/
     /*Poderia ser utilizado justify-content também*/
+    /*
     .nav-list {
         flex-grow: 1;
     }
+    */
     
     /*Mudança do flex-direction para que todos os containers fiquem lado a lado também*/
-    #header {
+    #header div {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
     }
 
 }

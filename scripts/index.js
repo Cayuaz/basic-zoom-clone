@@ -1,12 +1,17 @@
+//Cria uma variável com o link Workplace
 const workplace = document.getElementById('workplace');
+//Cria uma variável com o container do elemento Workplace
 const workplaceContainer = document.getElementById('workplace-container')
 
+//Sempre que o ponteiro do mouse entrar no link ele adiciona a seta
 function enter (word, container) {
 
     word.addEventListener('mouseenter', () => {
 
+        //Verifica se já não existe um elemento com a classe arrow para não criar mais de um
         const existingArrow = container.querySelector('.arrow') 
 
+        //Se não existir, ele cria um span com a seta e adiciona uma classe nela
          if (!existingArrow) {
             const arrow =  document.createElement('span');
     
@@ -17,19 +22,22 @@ function enter (word, container) {
     })    
 }
 
-
+//Sempre que o ponteiro sair ele remove a seta adicionada
 function exit (word, container) {
 
     word.addEventListener(('mouseleave'), () => {
 
+    //Cria uma variável com o elemento que tem a classe arrow
     const arrow = container.querySelector('.arrow');
 
+    //Se ele existir, é removido do DOM
     if(arrow) {
         arrow.remove();
     }
     })
 }
 
+//Envia como parâmetro para as funções enter e exit a variável workplace e o seu container
 enter(workplace, workplaceContainer)
 exit(workplace, workplaceContainer)
 
