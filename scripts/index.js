@@ -46,11 +46,12 @@ exit(workplace, workplaceContainer)
 const cards = document.querySelectorAll('.cards')
 
 //Função que verifica cada mudança dos elementos cards
-//entries representa a mudança e entry é cada mudança
+//entries é um array de objetos com todas as mudanças dos cards
+//entry é cada objeto desse array
 function checkVisibleCard(entries, observer) {
     entries.forEach(entry => {
 
-        //Entry target representa os próprios cards e ratio é a propriedade de visibilidade dos cards
+        //Entry.target representa os próprios cards e intersectionRatio é a propriedade de visibilidade dos cards
         //Ou seja a a opacidade dos cards é igual ao nível de visibilidade deles
         entry.target.style.opacity = entry.intersectionRatio;
 
