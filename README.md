@@ -16,23 +16,23 @@ Este projeto é um clone da página inicial do Zoom, recriando a estrutura, layo
 
 - Praticar habilidades de desenvolvimento front-end avançado, incluindo:
 
-- Layout responsivo usando CSS Grid, Flexbox, Clamp e Media Queries
+  - Layout responsivo usando CSS Grid, Flexbox, Clamp e Media Queries
 
-- Manipulação do DOM com JavaScript para interatividade
+  - Manipulação do DOM com JavaScript para interatividade
 
-- Organização semântica do HTML
+  - Organização semântica do HTML
 
-- Desenvolvimento baseado em design real
+  - Desenvolvimento baseado em design real
 
 ## Tecnologias Utilizadas
 
-HTML
+- HTML
 
-CSS (com Media Queries para responsividade)
+- CSS (com Media Queries para responsividade)
 
-JavaScript
+- JavaScript
 
-Fontes personalizadas
+- Fontes personalizadas
 
 ## Funcionalidades
 
