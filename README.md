@@ -10,7 +10,7 @@
 
 ## Descrição
 
-Este projeto é um clone da página inicial do Zoom, recriando a estrutura, layout e estilos com HTML, CSS e JavaScript. O objetivo foi replicar a aparência e funcionalidades principais da página oficial, praticando responsividade, manipulação do DOM e efeitos interativos.
+Este projeto é um clone da página inicial do Zoom, recriando a estrutura, layout e estilos com HTML, CSS e JavaScript. O objetivo foi replicar a aparência e algumas funcionalidades principais da página oficial, praticando responsividade, manipulação do DOM e efeitos interativos, além de incorporar estilos personalizados para dar um toque único ao projeto.
 
 ## Objetivo
 
