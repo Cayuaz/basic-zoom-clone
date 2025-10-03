@@ -14,7 +14,7 @@ Este projeto é um clone da página inicial do Zoom, recriando a estrutura, layo
 
 ## Objetivo
 
-- Praticar habilidades de desenvolvimento front-end avançado, incluindo:
+Praticar habilidades de desenvolvimento front-end avançado, incluindo:
 
   - Layout responsivo usando CSS Grid, Flexbox, Clamp e Media Queries
 
@@ -61,3 +61,7 @@ Este projeto é um clone da página inicial do Zoom, recriando a estrutura, layo
 ## Versão Online
 
 [https://basic-zoom-clone.vercel.app](https://basic-zoom-clone.vercel.app)
+
+## Licença
+
+Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
